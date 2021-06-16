@@ -1,4 +1,4 @@
-from config import config
+from configuration import config
 import discord 
 import os
 from discord.ext import commands
