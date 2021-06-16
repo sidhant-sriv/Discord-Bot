@@ -1,0 +1,21 @@
+# List of features
+
+- [x] Show latency
+- [x] Send pong
+- [x] Clear messages
+- [x] 8ball
+- [x] yey
+- [x] Google
+- [x] Wikipedia
+- [ ] Entrar
+- [ ] Music
+- [ ] Python Shell
+- [ ] YouTube Links
+- [ ] Mute/Unmute
+- [x] Ban/ Kick
+- [ ] Assign Roles
+- [ ] Tic Tac Toe
+- [ ] Coin Toskjjs
+- [ ] Greeting
+- [ ] Something with databases
+- [ ] Google news
