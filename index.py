@@ -2,7 +2,7 @@ from configuration import config
 import discord 
 import os
 from discord.ext import commands
-client = commands.Bot(command_prefix="|")
+client = commands.Bot(command_prefix="-")
 
 @client.command()
 async def load(ctx,extension):

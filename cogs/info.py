@@ -19,7 +19,7 @@ class Info(commands.Cog):
             res = discord.Embed(title=str(query).title(),
                                 description=wikipedia.summary(query, sentences=3))
             await ctx.send(embed=res)
-        except wikipedia.DisambiguationError:
+        except Exception:
             await ctx.send(f"Here is a page with all the links that contain {query} <https://en.wikipedia.org/wiki/"+query.title()+">")
 
 
