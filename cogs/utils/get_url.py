@@ -13,4 +13,3 @@ def get_url(videoname):
 
     res = videosSearch.result()['result'][0]['link']
     return res
-print(get_url("hello world"))

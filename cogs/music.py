@@ -1,8 +1,10 @@
 
 # TODO:
-# Integrate get url util into all the features
-# make stream the primary option
+# check if song over
+#queue command
+# leave if no one in vc after song over
 
+from .utils.get_url import get_url
 import asyncio
 import discord
 import youtube_dl
@@ -63,32 +65,11 @@ class Music(commands.Cog):
         await channel.connect()
 
     @commands.command()
-    async def play(self, ctx, *, query):
-        """Plays a file from the local filesystem"""
-
-        source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(query))
-        ctx.voice_client.play(source, after=lambda e: print(
-            'Player error: %s' % e) if e else None)
-
-        await ctx.send('Now playing: {}'.format(query))
-
-    @commands.command()
-    async def yt(self, ctx, *, url):
-        """Plays from a url (almost anything youtube_dl supports)"""
-
+    async def play(self, ctx, *, url):
+        """Play music"""
+        name = get_url(url)
         async with ctx.typing():
-            player = await YTDLSource.from_url(url, loop=self.bot.loop)
-            ctx.voice_client.play(player, after=lambda e: print(
-                'Player error: %s' % e) if e else None)
-
-        await ctx.send('Now playing: {}'.format(player.title))
-
-    @commands.command()
-    async def stream(self, ctx, *, url):
-        """Streams from a url (same as yt, but doesn't predownload)"""
-
-        async with ctx.typing():
-            player = await YTDLSource.from_url(url, loop=self.bot.loop, stream=True)
+            player = await YTDLSource.from_url(name, loop=self.bot.loop, stream=True)
             ctx.voice_client.play(player, after=lambda e: print(
                 'Player error: %s' % e) if e else None)
 
@@ -111,8 +92,6 @@ class Music(commands.Cog):
         await ctx.voice_client.disconnect()
 
     @play.before_invoke
-    @yt.before_invoke
-    @stream.before_invoke
     async def ensure_voice(self, ctx):
         if ctx.voice_client is None:
             if ctx.author.voice:
