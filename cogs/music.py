@@ -1,8 +1,5 @@
 
-# TODO:
-# check if song over
-#queue command
-# leave if no one in vc after song over
+# TODO: Add queue system
 
 from .utils.get_url import get_url
 import asyncio

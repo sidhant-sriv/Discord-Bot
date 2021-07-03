@@ -1,8 +1,11 @@
-from configuration import config
 import discord 
 import os
+from dotenv import load_dotenv, find_dotenv
 from discord.ext import commands
-client = commands.Bot(command_prefix="-")
+client = commands.Bot(command_prefix="!!")
+load_dotenv(find_dotenv())
+
+TOKEN = os.environ['TOKEN']
 
 @client.command()
 async def load(ctx,extension):
@@ -20,4 +23,4 @@ for filename in os.listdir("./cogs"):
 @client.event
 async def on_ready():
     print("Bot is ready")
-client.run(config["discord-token"])
+client.run(TOKEN)
