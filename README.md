@@ -1,10 +1,5 @@
 # Discord bot
 
-## Coming soon
+## SidBot
 
-- Reddit Posts / Memes
-- Google News
-- Save playlist feature (fingers crossed on this one 🤞)
-- Guild stats
-- Server welcome
-- Reaction player
+### This is a discord bot. I don't have a list of features rn 😜
