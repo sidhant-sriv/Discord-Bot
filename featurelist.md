@@ -8,7 +8,7 @@
 - [x] Google
 - [x] Wikipedia
 - [ ] Entrar
-- [ ] Music
+- [x] Music
 - [ ] Python Shell
 - [ ] YouTube Links
 - [ ] Mute/Unmute
