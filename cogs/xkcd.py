@@ -40,7 +40,7 @@ class XKCD(c.Cog):
         if ctx.invoked_subcommand is None:
             comic = await self.get_comic("random")
             res = discord.Embed(
-                title=comic[2], url=comic[1], description=f"Comic number {comic[0]}", colour=discord.Colour(0x4B0082))
+                title=comic[2], url=comic[1], description=f"**Comic number {comic[0]}**", colour=discord.Colour(0xB0B0BF))
             res.set_image(url=comic[1])
             res.set_footer(text=comic[-1])
             await ctx.send(embed=res)
