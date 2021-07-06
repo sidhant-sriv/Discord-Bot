@@ -6,6 +6,7 @@ client = commands.Bot(command_prefix="!!")
 load_dotenv(find_dotenv())
 
 TOKEN = os.environ['TOKEN']
+COLOR = 0xB0B0BF
 
 @client.command()
 async def load(ctx,extension):

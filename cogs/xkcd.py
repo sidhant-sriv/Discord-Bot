@@ -50,7 +50,7 @@ class XKCD(c.Cog):
         """Get the latest xkcd comic."""
         comic = await self.get_comic("latest")
         res = discord.Embed(
-            title=comic[2], url=comic[1], description=f"Comic number {comic[0]}", colour=discord.Colour(0x4B0082))
+            title=comic[2], url=comic[1], description=f"Comic number {comic[0]}", colour=discord.Colour(0xB0B0BF))
         res.set_image(url=comic[1])
         res.set_footer(text=comic[-1])
         await ctx.send(embed=res)
@@ -60,7 +60,7 @@ class XKCD(c.Cog):
         """Get an xkcd comic by number."""
         comic = await self.get_comic("number", number)
         res = discord.Embed(
-            title=comic[2], url=comic[1], description=f"Comic number {comic[0]}", colour=discord.Colour(0x4B0082))
+            title=comic[2], url=comic[1], description=f"Comic number {comic[0]}", colour=discord.Colour(0xB0B0BF))
         res.set_image(url=comic[1])
         res.set_footer(text=comic[-1])
         await ctx.send(embed=res)
