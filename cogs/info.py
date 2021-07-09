@@ -16,8 +16,8 @@ class Info(commands.Cog):
     @commands.command(description="Wikipedia")
     async def wiki(self, ctx, *, query):
         try:
-            res = discord.Embed(title=str(query).title(),
-                                description=wikipedia.summary(query, sentences=3))
+            t=str(wikipedia.search(query)[0].encode("utf-8"))
+            res = discord.Embed(title=str(t).title(),description=wikipedia.summary(t, sentences=4))
             await ctx.send(embed=res)
         except Exception:
             await ctx.send(f"Here is a page with all the links that contain {query} <https://en.wikipedia.org/wiki/"+query.title()+">")
