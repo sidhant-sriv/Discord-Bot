@@ -7,6 +7,7 @@ class Latency(commands.Cog):
 
     @commands.command()
     async def latency(self,ctx):
+        """Returns latency"""
         await ctx.send(f'The latency is {round(self.client.latency *1000)} ms')
 
 def setup(client):

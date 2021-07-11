@@ -1,5 +1,5 @@
 # Discord bot
 
-## SidBot
+## (Looking for a new name)
 
-### This is a discord bot. I don't have a list of features rn 😜
+
