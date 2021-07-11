@@ -15,7 +15,7 @@ class Info(commands.Cog):
         for j in search(query, tld="co.in", num=8, stop=8, pause=1):
             html_content=requests.get(j).content.decode()
             title=html_content[html_content.find("<title>")+len("<title>"):html_content.find("</title>")]
-            st=st+"\n"+title+":"+str(j)
+            st=st+"\n"+title
         await ctx.send(embed=discord.Embed(title="Google Search", description=st))
 
     @commands.command(description="Wikipedia")
