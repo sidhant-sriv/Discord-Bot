@@ -2,7 +2,7 @@ import discord as discord
 from discord.ext import commands
 from googlesearch import search
 import wikipedia
-
+import requests
 
 class Info(commands.Cog):
     def __init__(self, client):
@@ -11,8 +11,12 @@ class Info(commands.Cog):
     @commands.command(description="Gives the first google result")
     async def google(self, ctx, *, query):
         """Google search"""
-        for j in search(query, tld="co.in", num=2, stop=2, pause=1):
-            await ctx.send(j)
+        st=""
+        for j in search(query, tld="co.in", num=8, stop=8, pause=1):
+            html_content=requests.get(j).content.decode()
+            title=html_content[html_content.find("<title>")+len("<title>"):html_content.find("</title>")]
+            st=st+"\n"+title+":"+str(j)
+        await ctx.send(embed=discord.Embed(title="Google Search", description=st))
 
     @commands.command(description="Wikipedia")
     async def wiki(self, ctx, *, query):
