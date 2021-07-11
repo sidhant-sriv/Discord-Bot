@@ -44,7 +44,6 @@ class InvalidVoiceChannel(VoiceConnectionError):
 
 
 class YTDLSource(discord.PCMVolumeTransformer):
-
     def __init__(self, source, *, data, requester):
         super().__init__(source)
         self.requester = requester
@@ -154,8 +153,8 @@ class MusicPlayer:
 
 
 class Music(commands.Cog):
-    """Music related commands."""
 
+    """Music related commands."""
     __slots__ = ('bot', 'players')
 
     def __init__(self, bot):

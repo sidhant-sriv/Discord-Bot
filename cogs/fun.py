@@ -12,6 +12,7 @@ USER_AGENT = os.environ['REDDIT_USER_AGENT']
 
 
 class Fun(commands.Cog):
+    """Stuff that's fun"""
     def __init__(self, client):
         self.client = client
 

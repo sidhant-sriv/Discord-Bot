@@ -1,8 +1,9 @@
 import discord 
 import os
 from dotenv import load_dotenv, find_dotenv
+from pretty_help import PrettyHelp
 from discord.ext import commands
-client = commands.Bot(command_prefix="!!")
+client = commands.Bot(command_prefix="!!",help_command=PrettyHelp(no_category="none",sort_commands=True,show_index=True))
 load_dotenv(find_dotenv())
 
 TOKEN = os.environ['TOKEN']

@@ -5,6 +5,7 @@ import wikipedia
 
 
 class Info(commands.Cog):
+    """Info giving commands"""
     def __init__(self, client):
         self.client = client
 
