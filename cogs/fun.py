@@ -39,7 +39,8 @@ class Fun(commands.Cog):
                      "My sources say no.",
                      "Outlook not so good.",
                      "Very doubtful."]
-        await ctx.send(f'Question: {question} \n Answer: {random.choice(responses)}')
+        res = discord.Embed(title=f'Question : **{question}**',description=f'Answer: **{random.choice(responses)}**')
+        await ctx.send(embed=res)
 
     @commands.command()
     async def meme(self, ctx):
