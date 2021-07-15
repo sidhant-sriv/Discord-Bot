@@ -16,6 +16,7 @@ h11==0.12.0
 httpcore==0.13.6
 httpx==0.18.2
 idna==2.10
+imgurpython==1.1.7
 joblib==1.0.1
 multidict==5.1.0
 nltk==3.6.2
