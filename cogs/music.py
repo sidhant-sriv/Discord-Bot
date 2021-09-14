@@ -388,6 +388,7 @@ class Music(commands.Cog):
         embed.set_footer(text=f"{ctx.author.display_name}",
                          icon_url=ctx.author.avatar_url)
 
+        print(list(player.queue._queue))
         await ctx.send(embed=embed)
 
     @commands.command(name='np', aliases=['song', 'current', 'currentsong', 'playing'], description="shows the current playing song")
