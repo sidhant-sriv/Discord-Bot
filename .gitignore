@@ -128,3 +128,7 @@ dmypy.json
 .pyre/
 
 plan.md
+node_modules
+package.json
+package-lock.json
+
