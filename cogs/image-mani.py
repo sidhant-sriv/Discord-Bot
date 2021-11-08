@@ -5,10 +5,6 @@ from io import BytesIO
 import os
 import requests
 
-api_key = os.environ.get('CLASSIFICATION_API')
-api_secret = os.environ.get('CLASSIFICATION_API_SECRET')
-
-
 class ImageManipulation(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -19,7 +15,7 @@ class ImageManipulation(commands.Cog):
         #     user = ctx.author
         # if image_url == None:
         #     image_url = user.avatar_url
-        url = "http://localhost:5000/postjson"
+        url = "http://localhost:5000/predict"
         data = {
             "image_url": str(image_url),
         }
