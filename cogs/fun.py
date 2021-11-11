@@ -8,11 +8,11 @@ import praw
 from textblob import TextBlob
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv('../.env'))
-CLIENT_ID = os.getenv('REDDIT_CLIENT_ID')
-CLIENT_SECRET = os.getenv('REDDIT_CLIENT_SECRET')
-USER_AGENT = os.getenv('REDDIT_USER_AGENT')
-IMGUR_ID = os.getenv('IMGUR_CLIENT_ID')
-IMGUR_SECRET = os.getenv('IMGUR_CLIENT_SECRET')
+CLIENT_ID = os.environ['REDDIT_CLIENT_ID']
+CLIENT_SECRET = os.environ['REDDIT_CLIENT_SECRET']
+USER_AGENT = os.environ['REDDIT_USER_AGENT']
+IMGUR_ID = os.environ['IMGUR_CLIENT_ID']
+IMGUR_SECRET = os.environ['IMGUR_CLIENT_SECRET']
 
 class Fun(commands.Cog):
     """Stuff that's fun"""
