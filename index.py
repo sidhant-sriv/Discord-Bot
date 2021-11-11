@@ -6,7 +6,7 @@ from discord.ext import commands
 client = commands.Bot(command_prefix="!!",help_command=PrettyHelp(no_category="none",sort_commands=True,show_index=True))
 load_dotenv(find_dotenv())
 
-TOKEN = os.getenv('TOKEN')
+TOKEN = os.environ['TOKEN']
 COLOR = 0xB0B0BF
 
 @client.command()
