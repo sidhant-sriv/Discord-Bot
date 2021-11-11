@@ -1,0 +1,7 @@
+venv
+.env
+.env-example
+classification_api.py
+.git
+.gitignore
+Dockerfile

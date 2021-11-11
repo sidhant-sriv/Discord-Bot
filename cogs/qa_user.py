@@ -9,10 +9,10 @@ import math
 import os
 
 
-database_password = os.environ.get('DATABASE_PASSWORD')
-database_username = os.environ.get('DATABASE_USERNAME')
-API_URL = os.environ.get('HUGGINGFACE_URL')
-API_KEY = os.environ.get('HUGGINGFACE_KEY')
+database_password = os.getenv('DATABASE_PASSWORD')
+database_username = os.getenv('DATABASE_USERNAME')
+API_URL = os.getenv('HUGGINGFACE_URL')
+API_KEY = os.getenv('HUGGINGFACE_KEY')
 headers = {"Authorization": str(API_KEY)}
 
 
