@@ -15,7 +15,7 @@ class ImageManipulation(commands.Cog):
         #     user = ctx.author
         # if image_url == None:
         #     image_url = user.avatar_url
-        url = "http://localhost:5000/predict"
+        url = "http://localhost:5001/predict"
         data = {
             "image_url": str(image_url),
         }
