@@ -15,7 +15,7 @@ class ImageManipulation(commands.Cog):
         #     user = ctx.author
         # if image_url == None:
         #     image_url = user.avatar_url
-        url = os.environ.['CLASSIFICATION_URL']
+        url = os.environ['CLASSIFICATION_URL']
         data = {
             "image_url": str(image_url),
         }
