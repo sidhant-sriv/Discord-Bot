@@ -3,9 +3,10 @@
 # TODO MD5
 # TODO Base64
 
+from email import utils
 import discord
 from discord.ext import commands
-from utils.caeser_cipher import encrypt, decrypt
+from ..utils import CaeserCipher
 
 
 class Crypto(commands.Cog):
@@ -14,12 +15,12 @@ class Crypto(commands.Cog):
 
     @commands.command()
     async def caeser_e(self, ctx, *, text):
-        await ctx.send(encrypt(text, 3))
+        await ctx.send(CaeserCipher.encrypt(text, 3))
 
     @commands.command()
     async def caeser_d(self, ctx, key, *, text):
         print(key)
-        await ctx.send(decrypt(text, 3))
+        await ctx.send(CaeserCipher.decrypt(text, 3))
 
 
 def setup(self, client):

@@ -1,5 +1,3 @@
-# Caeser cipher in python
-
 class CaeserCipher:
     
     def encrypt(self, text,key):
