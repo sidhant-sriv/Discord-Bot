@@ -1,14 +1,12 @@
-# TODO Base64
-
-from email import utils
 import discord
 from discord.ext import commands
 import hashlib
+import base64
 
 
 class CaeserCipher:
 
-    def encrypt(self, text, key):
+    def encrypt(self, text, key=3):
         result = ""
         for i in text:
             if i.isupper():
@@ -19,7 +17,7 @@ class CaeserCipher:
                 result += i
         return result
 
-    def decrypt(self, text, key):
+    def decrypt(self, text, key=3):
         result = ""
         for i in text:
             if i.isupper():
@@ -49,42 +47,33 @@ class MD5:
         return self.hash
 
 
-class Base64:
-    def encode(self, text):
-        return text.encode('utf-8').decode('base64')
-
-    def decode(self, text):
-        return text.decode('base64')
-
-
 class Cryptography(commands.Cog):
     def __init__(self, client):
         self.client = client
 
     @commands.command()
     async def caeser_e(self, ctx, *, text):
-        await ctx.send(CaeserCipher.encrypt(text, 3))
+        await ctx.send("```{}```".format(CaeserCipher().encrypt(text)))
 
     @commands.command()
     async def caeser_d(self, ctx, key, *, text):
-        print(key)
-        await ctx.send(CaeserCipher.decrypt(text, 3))
+        await ctx.send("```{}```".format(CaeserCipher().decrypt(text, int(key))))
 
     @commands.command()
     async def sha256(self, ctx, *, text):
-        await ctx.send(SHA256(text))
+        await ctx.send("`SHA256 Hash: {}`".format(SHA256(text)))
 
     @commands.command()
     async def md5(self, ctx, *, text):
-        await ctx.send(MD5(text))
+        await ctx.send("MD5 Hash: `{}`".format(MD5(text)))
 
     @commands.command()
     async def base64_e(self, ctx, *, text):
-        await ctx.send(Base64.encode(text))
+        await ctx.send("```{}```".format(base64.b64encode(text.encode('utf-8')).decode('utf-8')))
 
     @commands.command()
     async def base64_d(self, ctx, *, text):
-        await ctx.send(Base64.decode(text))
+        await ctx.send("```{}```".format(base64.b64decode(text.encode('utf-8')).decode('utf-8')))
 
 
 def setup(client):
