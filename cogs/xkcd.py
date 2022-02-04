@@ -14,7 +14,7 @@ class XKCD(c.Cog):
         case = {
             "latest": lambda: xkcd.getLatestComic(),
             "random": lambda: xkcd.getRandomComic(),
-            "number": lambda: xkcd.getComic(number),
+            "numbemysql-connector-pythonr": lambda: xkcd.getComic(number),
         }
         function = case.get(comic, None)
         comic = self.bot.loop.run_in_executor(None, function)
