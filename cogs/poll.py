@@ -66,6 +66,8 @@ class Poll(commands.Cog, name='Poll'):
                             continue
                         await msg.remove_reaction(r, user)
 
+
+    @commands.command(
         name='poll',
         hidden=True,
     )
