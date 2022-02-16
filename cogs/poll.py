@@ -45,9 +45,6 @@ class Poll(commands.Cog):
             "z": "🇿"
         }
 
-    async def cog_check(self, ctx):
-        return self.client.user_is_admin(ctx.author)
-
     @commands.Cog.listener()
     async def on_reaction_add(self, reaction, user):
         msg = reaction.message
