@@ -2,7 +2,7 @@ import re
 from discord.ext import commands
 
 
-class Poll(commands.Cog, name='Poll'):
+class Poll(commands.Cog):
     def __init__(self, client):
         self.client = client
         self.polls = {}
@@ -94,5 +94,5 @@ class Poll(commands.Cog, name='Poll'):
             await poll_msg.add_reaction(react_emoji)
 
 
-def setup(client):
-    client.add_cog(Poll(client))
+def setup(bot):
+    bot.add_cog(Poll(bot))
