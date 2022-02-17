@@ -59,7 +59,7 @@ class Poll(commands.Cog):
 
         output = 'Results of the poll for "{}":\n'.format(embed['title']) + \
                  '\n'.join(['{}: {}'.format(opt_dict[key], tally[key]) for key in tally.keys()])
-        await self.bot.say(output)
+        await self.bot.send(output)
 
 
 def setup(bot):
